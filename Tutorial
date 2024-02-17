@@ -1,0 +1,32 @@
+#Def 
+Docker-Image: Executable application artifact [package].
+             Simialr to a JAR file but it includes the code as well as the config & env info as well.
+             Add even env varibles in the files/ directories.
+
+Docker-Container: Running instance of an Docker-image.
+Docker-Hub: Registery for the docker images[default]                
+                        
+
+
+#Docker Commands
+docker images - list of images on the machine.
+docker ps - list of running containers.
+docker pull {image}:{tag} [default tag is latest in case the tag is missing in the cmd].
+docker run {image}:{tag}
+
+NOTE: above cmd will print all the logs of the application running in the container and blocks your termial.
+      in order to mitigate from this behavior use below cmd.
+
+docker run -d {image}:{tag} - it will detach [-d] and runs the container in the bkg and id is printed.
+docker logs {container id}
+
+NOTE: directly run an image which is not pulled already on your local.
+      docker run {image}:{tag}
+this will first pull then run this image.
+
+docker stop {container id}
+
+docker run -d -p {host port}:{container port}{image}:{tag}     - p means publish the container port to host port.
+
+
+
