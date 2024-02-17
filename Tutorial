@@ -1,4 +1,4 @@
-#Def 
+# Def 
 Docker-Image: Executable application artifact [package].
              Simialr to a JAR file but it includes the code as well as the config & env info as well.
              Add even env varibles in the files/ directories.
@@ -8,7 +8,7 @@ Docker-Hub: Registery for the docker images[default]
                         
 
 
-#Docker Commands
+# Docker Commands
 docker images - list of images on the machine.
 docker ps - list of running containers.
 docker pull {image}:{tag} [default tag is latest in case the tag is missing in the cmd].
@@ -26,7 +26,39 @@ this will first pull then run this image.
 
 docker stop {container id}
 
+
+# Port Binding
+-App inside container runs in an isolated docker network.
+so we need to expose the container port to the host(m/c on which it runs).
+
 docker run -d -p {host port}:{container port}{image}:{tag}     - p means publish the container port to host port.
+
+Note - Standard Practice is to bind the host port to same container port.
+
+
+
+# Container Start and Stop
+Every time we use the run cmd docker starts a new container w/o reusing the prev one.
+
+
+
+# Alaise for the container instead of id or the provided name
+docker run --name web-app -d  {image_id}
+
+
+# Private Registeries [AWS-ECR][Nexus][Docker-Gub]
+
+# Registry vs Repository
+AWS-PCR is a registry inside which there can be multiple repository for your application [1-1]
+in each app repo many versions of the same app can be stored.
+
+
+# Dockerize - Creating a docker file
+
+1. Create a definition of how to build an image from our app.
+2. The above def is stored in a file called "Docker-file"
+3. Docker-file is text doc in which inst are given to assemble an img.
+4. Docker can then build the image by those instr
 
 
 
