@@ -1,0 +1,22 @@
+#  Docker Commands
+1. docker images -> returns the list of all the images on the system.
+2. docker ps -> returns the list of all the running containers on the system.
+3. docker pull <image-name>: <tag-version> -> fetches the image
+4. docker run <image-name>: <tag-version> -> runs the image
+5. docker run -d <image-name>: <tag-version> -> runs the image in detached mode
+6. docker logs <container-id>: 
+7. dokcer stop <container-id>: 
+8. docker run -d -p <host-port>: <conatiner-port> <image-name>: <tag-version>: exposes the container by binding it to port.
+
+
+
+
+# What is Docker 
+
+Virtualization tool.
+Makes the development and deployment process easier.
+Packages the code along with the config, dependencies, system tools and run time. -> Standardised unit to run an application.
+
+
+
+
